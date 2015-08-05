@@ -12,21 +12,17 @@ import android.view.MenuItem;
 
 public class MaterialSearchActivity extends ListActivity{
     public static final String TAG = "MaterialSearchActivity";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.search);
-
-        // Get the intent, verify action and get the query
-        Intent intent = getIntent();
-        if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
-            String query = intent.getStringExtra(SearchManager.QUERY);
-            doMySearch(query);
-        }
+        setContentView(R.layout.activity_material_search);
+        handleIntent( getIntent() );
     }
 
     private void doMySearch(String query) {
-        Log.e(TAG, "doMySearch() called.");
+        Log.e(TAG, "doMySearch() called. query="+query);
+        setContentView(R.layout.activity_material_search);
     }
 
     @Override
@@ -36,6 +32,12 @@ public class MaterialSearchActivity extends ListActivity{
     }
 
     private void handleIntent(Intent intent) {
+        if (intent.getAction().equals(Intent.ACTION_VIEW)) {
+            Intent materialIntent = new Intent(this, MaterialActivity.class);
+            materialIntent.setData(intent.getData());
+            startActivity(materialIntent);
+            finish();
+        }
         if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
             String query =
                     intent.getStringExtra(SearchManager.QUERY);

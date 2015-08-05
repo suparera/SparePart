@@ -6,6 +6,10 @@ import com.google.gson.annotations.SerializedName;
  * Created by suparera on 15/06/2015.
  */
 public class Material {
+
+    @SerializedName("_id")
+    private long _id;
+
     @SerializedName("id")
     private String materialNo;
 
@@ -24,6 +28,23 @@ public class Material {
 
     @SerializedName("employee")
     private String employee;
+
+    @SerializedName("haveImage1")
+    private boolean haveImage1;
+
+    @SerializedName("haveImage2")
+    private boolean haveImage2;
+
+    @SerializedName("haveImage3")
+    private boolean haveImage3;
+
+    public long get_id() {
+        return _id;
+    }
+
+    public void set_id(long _id) {
+        this._id = _id;
+    }
 
     public String getCategory() {
         return category;
@@ -79,5 +100,29 @@ public class Material {
 
     public void setMin(int min) {
         this.min = min;
+    }
+
+    public boolean isHaveImage1() {
+        return haveImage1;
+    }
+
+    public void setHaveImage1(boolean haveImage1) {
+        this.haveImage1 = haveImage1;
+    }
+
+    public boolean isHaveImage2() {
+        return haveImage2;
+    }
+
+    public void setHaveImage2(boolean haveImage2) {
+        this.haveImage2 = haveImage2;
+    }
+
+    public boolean isHaveImage3() {
+        return haveImage3;
+    }
+
+    public void setHaveImage3(boolean haveImage3) {
+        this.haveImage3 = haveImage3;
     }
 }

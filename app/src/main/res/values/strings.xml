@@ -2,7 +2,9 @@
     <string name="app_name">SparePart</string>
 
     <string name="action_search">Search...</string>
-    <string name="search_hint">Search MatNo. or Desc</string>
+    <string name="search_hint">4203...</string>
+    <string name="search">Search Material</string>
+    <string name="search_setting">Search Setting for Mat</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="hello_world_2">Hello world!2</string>

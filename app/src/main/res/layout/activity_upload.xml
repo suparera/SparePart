@@ -7,80 +7,80 @@
     android:padding="10dp"
     >
 
-    <ImageView
-        android:layout_width="fill_parent"
-        android:layout_height="200dp"
-        android:id="@+id/imgPreview"
-        android:visibility="gone"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/txtPercentage"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="15dp"
-        android:layout_marginTop="15dp"
-        android:textColor="@color/txt_font"
-        android:textSize="30dp"
-        />
-    <ProgressBar
-        android:layout_width="fill_parent"
-        android:layout_height="200dp"
-        android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_marginBottom="35dp"
-        android:visibility="gone"
-        />
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnUpload"
-        android:layout_gravity="center_horizontal"
-        android:background="@color/btn_bg"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:text="@string/btnUploadToServer"
-        android:textColor="@color/white"
-        android:layout_marginBottom="20dp"
-        />
+    <!--<ImageView-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="200dp"-->
+        <!--android:id="@+id/imgPreview"-->
+        <!--android:visibility="gone"-->
+        <!--/>-->
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/txtPercentage"-->
+        <!--android:layout_gravity="center_horizontal"-->
+        <!--android:layout_marginBottom="15dp"-->
+        <!--android:layout_marginTop="15dp"-->
+        <!--android:textColor="@color/txt_font"-->
+        <!--android:textSize="30dp"-->
+        <!--/>-->
+    <!--<ProgressBar-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="200dp"-->
+        <!--android:id="@+id/progressBar"-->
+        <!--style="?android:attr/progressBarStyleHorizontal"-->
+        <!--android:layout_marginBottom="35dp"-->
+        <!--android:visibility="gone"-->
+        <!--/>-->
+    <!--<Button-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/btnUpload"-->
+        <!--android:layout_gravity="center_horizontal"-->
+        <!--android:background="@color/btn_bg"-->
+        <!--android:paddingLeft="20dp"-->
+        <!--android:paddingRight="20dp"-->
+        <!--android:text="@string/btnUploadToServer"-->
+        <!--android:textColor="@color/white"-->
+        <!--android:layout_marginBottom="20dp"-->
+        <!--/>-->
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnPreview"
-        android:layout_gravity="center_horizontal"
-        android:background="@color/btn_bg"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:text="@string/btnPreviewText"
-        android:textColor="@color/white"
-        android:layout_marginBottom="20dp"
-        />
+    <!--<Button-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/btnPreview"-->
+        <!--android:layout_gravity="center_horizontal"-->
+        <!--android:background="@color/btn_bg"-->
+        <!--android:paddingLeft="20dp"-->
+        <!--android:paddingRight="20dp"-->
+        <!--android:text="@string/btnPreviewText"-->
+        <!--android:textColor="@color/white"-->
+        <!--android:layout_marginBottom="20dp"-->
+        <!--/>-->
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnCapturePicture"
-        android:layout_gravity="center_horizontal"
-        android:background="@color/btn_bg"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:text="@string/btnCapturePicture"
-        android:textColor="@color/white"
-        android:layout_marginBottom="20dp"
-        />
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnRecycler"
-        android:layout_gravity="center_horizontal"
-        android:background="@color/btn_bg"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:text="Open Recycler"
-        android:textColor="@color/white"
-        android:layout_marginBottom="20dp"
-        />
+    <!--<Button-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/btnCapturePicture"-->
+        <!--android:layout_gravity="center_horizontal"-->
+        <!--android:background="@color/btn_bg"-->
+        <!--android:paddingLeft="20dp"-->
+        <!--android:paddingRight="20dp"-->
+        <!--android:text="@string/btnCapturePicture"-->
+        <!--android:textColor="@color/white"-->
+        <!--android:layout_marginBottom="20dp"-->
+        <!--/>-->
+    <!--<Button-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/btnRecycler"-->
+        <!--android:layout_gravity="center_horizontal"-->
+        <!--android:background="@color/btn_bg"-->
+        <!--android:paddingLeft="20dp"-->
+        <!--android:paddingRight="20dp"-->
+        <!--android:text="Open Recycler"-->
+        <!--android:textColor="@color/white"-->
+        <!--android:layout_marginBottom="20dp"-->
+        <!--/>-->
 
     <Button
         android:id="@+id/btnMaterialList"
@@ -94,6 +94,19 @@
         android:textColor="@color/white"
         android:layout_marginBottom="20dp"
         />
+
+    <!--<Button-->
+        <!--android:id="@+id/btnTesto"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="center_horizontal"-->
+        <!--android:background="@color/btn_bg"-->
+        <!--android:paddingLeft="20dp"-->
+        <!--android:paddingRight="20dp"-->
+        <!--android:text="Testo Thai ทดลอง กขค"-->
+        <!--android:textColor="@color/white"-->
+        <!--android:layout_marginBottom="20dp"-->
+        <!--/>-->
 
 
 

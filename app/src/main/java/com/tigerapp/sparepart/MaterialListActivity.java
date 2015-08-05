@@ -2,6 +2,7 @@ package com.tigerapp.sparepart;
 
 import android.app.SearchManager;
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -13,9 +14,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
 import com.tigerapp.sparepart.com.tigerapp.sparepart.okhttp.MaterialManager;
 import com.tigerapp.sparepart.model.Material;
 
@@ -30,6 +33,7 @@ public class MaterialListActivity extends ActionBarActivity {
     private RecyclerView.Adapter materialListViewAdapter;
     private List<Material> materials = new ArrayList<>();
     private RecyclerView.LayoutManager layoutManager;
+    private Button searchButton;
 
     /**
      * 1. map view Instance to view.id
@@ -46,7 +50,13 @@ public class MaterialListActivity extends ActionBarActivity {
 
         /* use getSupportActionBar() instead of getActionBar() */
         //getSupportActionBar().hide();
-
+        searchButton = (Button) findViewById(R.id.searchButton);
+        searchButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onSearchRequested();
+            }
+        });
 
 
         materialListView = (RecyclerView) findViewById(R.id.materialListView);
@@ -66,7 +76,11 @@ public class MaterialListActivity extends ActionBarActivity {
 
                     @Override
                     public void onItemClick(View view, int position) {
-                        Toast.makeText(MaterialListActivity.this, "HI position="+((TextView)view.findViewById(R.id.materialNo)).getText(), Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(MaterialListActivity.this, "HI position="+((TextView)view.findViewById(R.id.materialNo)).getText(), Toast.LENGTH_SHORT).show();
+                        final Material material = materials.get(position);
+                        Intent materialIntent= new Intent(MaterialListActivity.this, MaterialActivity.class);
+                        materialIntent.putExtra("materialJson", new Gson().toJson(material));
+                        startActivity(materialIntent);
 
                     }
                 }));

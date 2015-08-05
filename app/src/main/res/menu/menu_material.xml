@@ -4,4 +4,11 @@
     tools:context="com.tigerapp.sparepart.MaterialActivity">
     <item android:id="@+id/action_settings" android:title="@string/action_settings"
         android:orderInCategory="100" app:showAsAction="never" />
+
+    <item
+        android:id="@+id/saveButton"
+        android:icon="@drawable/ic_save_white_24dp"
+        android:title="save"
+        app:showAsAction="ifRoom"
+        />
 </menu>
