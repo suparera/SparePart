@@ -38,6 +38,9 @@ public class Material {
     @SerializedName("haveImage3")
     private boolean haveImage3;
 
+    @SerializedName("haveImage4")
+    private boolean haveImage4;
+
     public long get_id() {
         return _id;
     }
@@ -124,5 +127,13 @@ public class Material {
 
     public void setHaveImage3(boolean haveImage3) {
         this.haveImage3 = haveImage3;
+    }
+
+    public boolean isHaveImage4() {
+        return haveImage4;
+    }
+
+    public void setHaveImage4(boolean haveImage4) {
+        this.haveImage4 = haveImage4;
     }
 }

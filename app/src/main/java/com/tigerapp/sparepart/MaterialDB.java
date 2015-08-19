@@ -67,7 +67,7 @@ public class MaterialDB {
 
                 matrixCursor.newRow()
                         .add(material.get_id())
-                        .add(material.getMaterialNo())
+                        .add("["+material.getLocation()+"] \t:"+material.getMaterialNo())
                         .add(material.getDescr())
                         .add(material.getMaterialNo())
                         .add("android.resource://10.0.173.20/sparepart/thumbnails/"+material.getMaterialNo()+"-tn.jpg");

@@ -12,6 +12,12 @@
         android:title="@string/action_search"
         app:actionViewClass="android.support.v7.widget.SearchView"
         app:showAsAction="ifRoom"
+/>
 
+
+    <item android:id="@+id/materialSearchButton"
+        android:icon="@drawable/ic_heart"
+        android:title="Search"
+        app:showAsAction="ifRoom"
         />
 </menu>

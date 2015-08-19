@@ -55,6 +55,7 @@ public class MaterialManager {
             Response response = okHttpClient.newCall(request).execute();
             if (response.isSuccessful()) {
                 final String materialsJson = response.body().string();
+                Log.d(tag, "material in json form ="+materialsJson);
                 MaterialJson materialJson = new Gson().fromJson(materialsJson, MaterialJson.class);
                 Material material = materialJson.getMaterial();
                 return material;

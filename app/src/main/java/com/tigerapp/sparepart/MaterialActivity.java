@@ -75,6 +75,7 @@ public class MaterialActivity extends ActionBarActivity {
     private boolean isImage1Change = false;
     private boolean isImage2Change = false;
     private boolean isImage3Change = false;
+    private boolean isImage4Change = false;
 
     // UI Components
     private EditText materialNo;
@@ -85,7 +86,6 @@ public class MaterialActivity extends ActionBarActivity {
     private Material material;
     private ImageView imageView2;
     private Button btnCaptureImage2;
-    private TextView haveImage1;
 
 
     @Override
@@ -101,9 +101,6 @@ public class MaterialActivity extends ActionBarActivity {
         imageView1 = (ImageView) findViewById(R.id.imageView1);
         imageView2 = (ImageView) findViewById(R.id.imageView2);
         btnCaptureImage2 = (Button)findViewById(R.id.btnCaptureImage2);
-        haveImage1 = (TextView) findViewById(R.id.haveImage1);
-
-
 
         /* get Material back from Extra */
         Intent intent = getIntent();
@@ -115,7 +112,10 @@ public class MaterialActivity extends ActionBarActivity {
             loadMaterialAsynTask.execute(suggestionMaterialNo);
 
         } else {
-            material = new Gson().fromJson(intent.getStringExtra("materialJson"), Material.class);
+            //come from select item in MaterialSearchActivity
+            final Material aMat = new Gson().fromJson(intent.getStringExtra("materialJson"), Material.class);
+            LoadMaterialAsyncTask loadMaterialAsynTask = new LoadMaterialAsyncTask(this);
+            loadMaterialAsynTask.execute(aMat.getMaterialNo());
         }
 
 
@@ -150,8 +150,8 @@ public class MaterialActivity extends ActionBarActivity {
         materialNo.setText(material.getMaterialNo());
         descr.setText(material.getDescr());
         location.setText(material.getLocation());
-        haveImage1.setText(""+this.isImage1Change);
 
+        Log.d(TAG, "updateUI(): haveImage1="+material.isHaveImage1());
         // I'm blind programmer, don't known it exist or not, download it.
         if(material.isHaveImage1()){
             Picasso.with(this).load(Config.APP_SERVER_URL+"images/"+ material.getMaterialNo()+".jpg?time="+new Date().getTime()).into(imageView1);
@@ -229,7 +229,6 @@ public class MaterialActivity extends ActionBarActivity {
                 // success captured the image display it with image view
                 previewCaptureImage();
                 isImage1Change = true;
-                haveImage1.setText("" + this.isImage1Change);
             } else if(resultCode == RESULT_CANCELED){
                 // user cancel image capture
                 Toast.makeText(getApplicationContext(), "User cancelled image capture", Toast.LENGTH_SHORT).show();
@@ -241,7 +240,6 @@ public class MaterialActivity extends ActionBarActivity {
             if(resultCode == RESULT_OK){
                 previewCaptureImage2();
                 isImage2Change = true;
-                haveImage1.setText("" + this.isImage2Change);
             } else if(resultCode == RESULT_CANCELED){
                 // user cancel image capture
                 Toast.makeText(getApplicationContext(), "User cancelled image capture", Toast.LENGTH_SHORT).show();
