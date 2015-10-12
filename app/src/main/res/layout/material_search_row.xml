@@ -37,11 +37,11 @@
         android:layout_toRightOf="@id/thumbnail"
         android:maxLines="1"
         android:layout_below="@+id/location"
-
         />
+    <!--separate line-->
     <View
         android:layout_width="fill_parent"
-        android:layout_below="@+id/descr"
+        android:layout_below="@+id/thumbnail"
         android:layout_height="0.4dp"
         android:id="@+id/separator"
         android:visibility="visible"
