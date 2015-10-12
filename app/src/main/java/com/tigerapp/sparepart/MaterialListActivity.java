@@ -33,7 +33,6 @@ public class MaterialListActivity extends ActionBarActivity {
     private RecyclerView.Adapter materialListViewAdapter;
     private List<Material> materials = new ArrayList<>();
     private RecyclerView.LayoutManager layoutManager;
-    private Button searchButton;
 
     /**
      * 1. map view Instance to view.id
@@ -44,20 +43,10 @@ public class MaterialListActivity extends ActionBarActivity {
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        // enable progress circle to rotate
         requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_material_list);
-
-        /* use getSupportActionBar() instead of getActionBar() */
-        //getSupportActionBar().hide();
-        searchButton = (Button) findViewById(R.id.searchButton);
-        searchButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onSearchRequested();
-            }
-        });
-
 
         materialListView = (RecyclerView) findViewById(R.id.materialListView);
         /*2. setHasFixedSize */
@@ -151,9 +140,16 @@ public class MaterialListActivity extends ActionBarActivity {
         switch (id){
             case R.id.action_settings:
                 return true;
+
             case R.id.searchView:
                 openSearchDialog();
                 return true;
+
+            case R.id.materialSearchButton:
+                Intent intent = new Intent(this, MaterialSearchActivity.class);
+                startActivity(intent);
+                return true;
+
             default:
                 return super.onOptionsItemSelected(item);
         }

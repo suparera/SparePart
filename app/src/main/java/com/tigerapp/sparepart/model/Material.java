@@ -29,6 +29,18 @@ public class Material {
     @SerializedName("employee")
     private String employee;
 
+    @SerializedName("haveImage1")
+    private boolean haveImage1;
+
+    @SerializedName("haveImage2")
+    private boolean haveImage2;
+
+    @SerializedName("haveImage3")
+    private boolean haveImage3;
+
+    @SerializedName("haveImage4")
+    private boolean haveImage4;
+
     public long get_id() {
         return _id;
     }
@@ -91,5 +103,37 @@ public class Material {
 
     public void setMin(int min) {
         this.min = min;
+    }
+
+    public boolean isHaveImage1() {
+        return haveImage1;
+    }
+
+    public void setHaveImage1(boolean haveImage1) {
+        this.haveImage1 = haveImage1;
+    }
+
+    public boolean isHaveImage2() {
+        return haveImage2;
+    }
+
+    public void setHaveImage2(boolean haveImage2) {
+        this.haveImage2 = haveImage2;
+    }
+
+    public boolean isHaveImage3() {
+        return haveImage3;
+    }
+
+    public void setHaveImage3(boolean haveImage3) {
+        this.haveImage3 = haveImage3;
+    }
+
+    public boolean isHaveImage4() {
+        return haveImage4;
+    }
+
+    public void setHaveImage4(boolean haveImage4) {
+        this.haveImage4 = haveImage4;
     }
 }

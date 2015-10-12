@@ -7,9 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-//import com.squareup.picasso.Picasso;
-
-import com.bumptech.glide.Glide;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -35,7 +33,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter {
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder feedListRowHolder, int i) {
         FeedItem feedItem = feedItemList.get(i);
-        Glide.with(mContext).load(feedItem.getThumbnail())
+        Picasso.with(mContext).load(feedItem.getThumbnail())
                 .error(R.drawable.placeholder)
                 .placeholder(R.drawable.placeholder)
                 .into(((FeedListRowHolder)feedListRowHolder).thumbnail);

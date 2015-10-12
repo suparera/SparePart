@@ -59,15 +59,17 @@ public class UploadActivity extends Activity {
     private static final String TAG = MainActivity.class.getSimpleName();
     private ProgressBar progressBar;
     private String filePath = "/sdcard/Download/kidAndRabbit.jpg";
-    private TextView txtPercentage;
-    private ImageView imgPreview;
-    private Button btnUpload;
-    private Button btnPreview;
-    private Button btnRecycler;
+//    private TextView txtPercentage;
+//    private ImageView imgPreview;
+//    private Button btnUpload;
+//    private Button btnPreview;
+//    private Button btnRecycler;
+
+
+    private Button btnTesto;
     private Button btnMaterialList;
     long totalSize = 0;
     private Button btnCaptureImage;
-    private Button btnTesto;
 
     private static final int CAMERA_CAPTURE_IMAGE_REQUEST_CODE = 100;
     private static final int CAMERA_CAPTURE_VIDEO_REQUEST_CODE = 200;
@@ -87,60 +89,81 @@ public class UploadActivity extends Activity {
         setContentView(R.layout.activity_upload);
 
         // reference XML UI to object
-        txtPercentage = (TextView) findViewById(R.id.txtPercentage);
-        btnUpload = (Button)findViewById(R.id.btnUpload);
-        progressBar = (ProgressBar)findViewById(R.id.progressBar);
-        imgPreview = (ImageView)findViewById(R.id.imgPreview);
-        btnPreview = (Button)findViewById(R.id.btnPreview);
+//        txtPercentage = (TextView) findViewById(R.id.txtPercentage);
+//        btnUpload = (Button)findViewById(R.id.btnUpload);
+//        progressBar = (ProgressBar)findViewById(R.id.progressBar);
+//        imgPreview = (ImageView)findViewById(R.id.imgPreview);
+//        btnPreview = (Button)findViewById(R.id.btnPreview);
+//        btnTesto = (Button) findViewById(R.id.btnTesto);
+//        btnRecycler = (Button)findViewById(R.id.btnRecycler);
+        //image or vid
+//        btnPreview.setOnClickListener(new View.OnClickListener() {
+//                                          @Override
+//                                          public void onClick(View v) {
+//                                              previewMedia();
+//                                          }
+//                                      }
+//        );
+//
+//        btnUpload.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                new UploadFileToServer().execute();
+//            }
+//        });
+        //image or vid
+//        btnPreview.setOnClickListener(new View.OnClickListener() {
+//                                          @Override
+//                                          public void onClick(View v) {
+//                                              previewMedia();
+//                                          }
+//                                      }
+//        );
+//
+//        btnUpload.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                new UploadFileToServer().execute();
+//            }
+//        });
+//        btnRecycler.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent recyclerIntent = new Intent(UploadActivity.this, RecyclerViewActivity.class);
+//                startActivity(recyclerIntent);
+//            }
+//        });
+//        btnTesto.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                new UploadThaiAsynTask().execute();
+//            }
+//        });
+        // captureImage Listener
+//        btnCaptureImage.setOnClickListener(new View.OnClickListener(){
+//
+//            @Override
+//            public void onClick(View v) {
+//                captureImage();
+//            }
+//        });
+
         btnCaptureImage = (Button)findViewById(R.id.btnCapturePicture);
-        btnRecycler = (Button)findViewById(R.id.btnRecycler);
         btnMaterialList = (Button) findViewById(R.id.btnMaterialList);
-        btnTesto = (Button) findViewById(R.id.btnTesto);
+
 
 
 
         // receive data from previous activity
         Intent i = getIntent();
 
-        //image or vid
-        btnPreview.setOnClickListener(new View.OnClickListener() {
-                                          @Override
-                                          public void onClick(View v) {
-                                              previewMedia();
-                                          }
-                                      }
-        );
 
-        btnUpload.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                new UploadFileToServer().execute();
-            }
-        });
 
-        btnTesto.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                new UploadThaiAsynTask().execute();
-            }
-        });
 
-        // captureImage Listener
-        btnCaptureImage.setOnClickListener(new View.OnClickListener(){
 
-            @Override
-            public void onClick(View v) {
-                captureImage();
-            }
-        });
 
-        btnRecycler.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent recyclerIntent = new Intent(UploadActivity.this, RecyclerViewActivity.class);
-                startActivity(recyclerIntent);
-            }
-        });
+
+
 
         btnMaterialList.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -183,7 +206,7 @@ public class UploadActivity extends Activity {
         if(requestCode == CAMERA_CAPTURE_IMAGE_REQUEST_CODE){
             if(resultCode == RESULT_OK){
                 // success captured the image display it with image view
-                previewCaptureImage();
+                //previewCaptureImage();
             } else if(resultCode == RESULT_CANCELED){
                 // user cancel image capture
                 Toast.makeText(getApplicationContext(), "User cancelled image capture", Toast.LENGTH_SHORT).show();
@@ -197,30 +220,30 @@ public class UploadActivity extends Activity {
     /**
      * Display image from a path to ImageView
      */
-    private void previewCaptureImage(){
-        try{
-            imgPreview.setVisibility(View.VISIBLE);
-            BitmapFactory.Options options = new BitmapFactory.Options();
-            // downsize image
-            options.inSampleSize = 8;
-            final Bitmap bitmap = BitmapFactory.decodeFile(fileUri.getPath(), options);
-            imgPreview.setImageBitmap(bitmap);
-        } catch(NullPointerException nullE){
-            nullE.printStackTrace();
-        }
-    }
+//    private void previewCaptureImage(){
+//        try{
+//            imgPreview.setVisibility(View.VISIBLE);
+//            BitmapFactory.Options options = new BitmapFactory.Options();
+//            // downsize image
+//            options.inSampleSize = 8;
+//            final Bitmap bitmap = BitmapFactory.decodeFile(fileUri.getPath(), options);
+//            imgPreview.setImageBitmap(bitmap);
+//        } catch(NullPointerException nullE){
+//            nullE.printStackTrace();
+//        }
+//    }
 
     /**
      * Display capture image
      */
-    private void previewMedia(){
-        imgPreview.setVisibility(View.VISIBLE);
-        BitmapFactory.Options options = new BitmapFactory.Options();
-        //downsize image , as it throws OutOfMemero Exception for large Image
-        options.inSampleSize=8;
-        final Bitmap bitmap = BitmapFactory.decodeFile(filePath, options);
-        imgPreview.setImageBitmap(bitmap);
-    }
+//    private void previewMedia(){
+//        imgPreview.setVisibility(View.VISIBLE);
+//        BitmapFactory.Options options = new BitmapFactory.Options();
+//        //downsize image , as it throws OutOfMemero Exception for large Image
+//        options.inSampleSize=8;
+//        final Bitmap bitmap = BitmapFactory.decodeFile(filePath, options);
+//        imgPreview.setImageBitmap(bitmap);
+//    }
 
     private class UploadThaiAsynTask extends AsyncTask<Void, Integer, String> {
 
@@ -321,7 +344,7 @@ public class UploadActivity extends Activity {
             progressBar.setProgress(values[0]);
 
             // update percentage value
-            txtPercentage.setText(String.valueOf(values[0] + "%"));
+            //txtPercentage.setText(String.valueOf(values[0] + "%"));
         }
 
         @Override

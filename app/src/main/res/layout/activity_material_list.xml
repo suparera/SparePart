@@ -18,15 +18,4 @@
         android:layout_alignParentStart="false"
         android:layout_below="@+id/materialListViewTitle" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Search"
-        android:id="@+id/searchButton"
-        android:layout_above="@+id/materialListView"
-        android:layout_toRightOf="@+id/materialListViewTitle"
-        android:layout_toEndOf="@+id/materialListViewTitle"
-        android:layout_marginLeft="39dp"
-        android:layout_marginStart="39dp" />
-
 </RelativeLayout>

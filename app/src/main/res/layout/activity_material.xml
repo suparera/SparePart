@@ -1,77 +1,158 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.tigerapp.sparepart.MaterialActivity">
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        tools:context="com.tigerapp.sparepart.MaterialActivity">
 
 
-    <ImageView
-        android:layout_width="fill_parent"
-        android:layout_height="200dp"
-        android:id="@+id/imageView1"
-        android:layout_alignParentTop="true"
-        android:background="#ffceffe2" />
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="200dp"
+            android:id="@+id/imageView1"
+            android:layout_alignParentTop="true"
+            android:background="#ffceffe2" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ถ่ายรูป"
-        android:id="@+id/btnCaptureImage1"
-        android:layout_below="@+id/imageView1"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New Button"
-        android:id="@+id/button2"
-        android:layout_alignBottom="@+id/btnCaptureImage1"
-        android:layout_centerHorizontal="true" />
-
-    <EditText
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/materialNo"
-        android:layout_below="@+id/button2"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:inputType="text" />
-
-    <EditText
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/descr"
-        android:layout_below="@+id/materialNo"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:inputType="text" />
-
-    <TextView
-        android:id="@+id/materialNoLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toLeftOf="@+id/materialNo"
-        android:layout_alignParentLeft="true"
-        android:layout_alignTop="@+id/materialNo"
-        android:layout_alignBottom="@+id/materialNo"
-
-        android:text="Mat No."
-        android:gravity="center_vertical|right" />
-
-    <TextView
-        android:id="@+id/descrLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toLeftOf="@+id/descr"
-        android:layout_alignParentLeft="true"
-        android:layout_alignTop="@+id/descr"
-        android:layout_alignBottom="@+id/descr"
-
-        android:text="Desc"
-        android:gravity="center_vertical|right" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ถ่ายรูป"
+            android:id="@+id/btnCaptureImage1"
+            android:layout_below="@+id/imageView1"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
 
 
-</RelativeLayout>
+        <EditText
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/materialNo"
+            android:layout_below="@+id/btnCaptureImage1"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:inputType="text" />
+
+        <EditText
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/descr"
+            android:layout_below="@+id/materialNo"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:inputType="text" />
+
+        <EditText
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/location"
+            android:layout_below="@+id/descr"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:inputType="text" />
+
+        <TextView
+            android:id="@+id/materialNoLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/materialNo"
+            android:layout_alignParentLeft="true"
+            android:layout_alignTop="@+id/materialNo"
+            android:layout_alignBottom="@+id/materialNo"
+            android:text="Mat No."
+            android:gravity="center_vertical|right" />
+
+        <TextView
+            android:id="@+id/descrLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/descr"
+            android:layout_alignParentLeft="true"
+            android:layout_alignTop="@+id/descr"
+            android:layout_alignBottom="@+id/descr"
+            android:text="Desc"
+            android:gravity="center_vertical|right" />
+
+        <TextView
+            android:id="@+id/locationLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/location"
+            android:layout_alignParentLeft="true"
+            android:layout_alignTop="@+id/location"
+            android:layout_alignBottom="@+id/location"
+            android:text="Location"
+            android:gravity="center_vertical|right" />
+
+        <LinearLayout
+            android:id="@+id/image2Layout"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/location"
+            android:layout_alignParentLeft="true"
+            android:background="@color/ripple_material_dark"
+            android:layout_alignParentStart="true">
+
+            <ImageView android:id="@+id/imageView2"
+                android:layout_width="fill_parent"
+                android:layout_height="250dp"
+                />
+
+            <LinearLayout android:id="@+id/image2ButtonContainer"
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                >
+                <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="ถ่ายรูปที่ 2"
+                    android:id="@+id/btnCaptureImage2"
+                    />
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/image3Layout"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/image2Layout"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
+
+            <ImageView android:id="@+id/imageView3"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                />
+
+            <LinearLayout android:id="@+id/image3ButtonContainer"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+                <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="ถ่ายรูปที่ 3"
+                    android:id="@+id/btnCaptureImage3"
+                    />
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+</ScrollView>

@@ -16,7 +16,7 @@
     <string name="title_activity_recycler_view">RecyclerViewActivity</string>
     <string name="title_activity_material_list">MaterialListActivity</string>
     <string name="materialListViewTitle">List of Material</string>
-    <string name="title_activity_material_search">MaterialSearchActivity</string>
+    <string name="title_activity_material_search">ค้นหา Sparepart ที่ต้องการ</string>
     <string name="title_activity_material">Material</string>
 
 

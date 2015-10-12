@@ -54,15 +54,11 @@ public class MaterialManager {
         try {
             Response response = okHttpClient.newCall(request).execute();
             if (response.isSuccessful()) {
-                Material m = new Material();
-                m.setMaterialNo("440012347");
-                m.setDescr("Testing");
-                m.setLocation("A1");
-                String mJon = new Gson().toJson(m);
-
                 final String materialsJson = response.body().string();
+                Log.d(tag, "material in json form ="+materialsJson);
                 MaterialJson materialJson = new Gson().fromJson(materialsJson, MaterialJson.class);
-                return materialJson.getMaterial();
+                Material material = materialJson.getMaterial();
+                return material;
             }
         } catch (IOException ioe) {
             Log.e(tag, "IOException occur" + ioe.getMessage());
