@@ -336,6 +336,9 @@ public class MaterialActivity extends ActionBarActivity {
         // upload local image to Server image, with id tell is main image or 2nd,3rd image
         // upload also include json that parse from Material object, for save back to server
         // remove localImage
+        // set value to material
+        material.setLocation(location.getText().toString());
+        material.setDescr(descr.getText().toString());
         new UploadFileToServerAsyncTask().execute();
     }
 
